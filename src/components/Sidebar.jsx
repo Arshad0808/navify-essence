@@ -4,13 +4,15 @@ import { Link, useLocation } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { 
   LayoutDashboard, 
-  CircleDollarSign, 
-  Tags, 
+  GemIcon, 
+  Truck, 
   Users, 
   ArrowLeftRight, 
   BarChart3, 
   Menu, 
-  X 
+  X,
+  PercentIcon,
+  CircleDollarSign
 } from 'lucide-react';
 
 const Sidebar = ({ isOpen, toggleSidebar }) => {
@@ -34,10 +36,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
 
   const navItems = [
     { path: '/', icon: <LayoutDashboard size={20} />, name: 'Dashboard' },
-    { path: '/inventory', icon: <CircleDollarSign size={20} />, name: 'Gold Inventory' },
-    { path: '/categories', icon: <Tags size={20} />, name: 'Categories' },
-    { path: '/suppliers', icon: <Users size={20} />, name: 'Suppliers' },
+    { path: '/raw-materials', icon: <GemIcon size={20} />, name: 'Raw Materials' },
+    { path: '/suppliers', icon: <Truck size={20} />, name: 'Suppliers' },
+    { path: '/clients', icon: <Users size={20} />, name: 'Clients' },
     { path: '/transactions', icon: <ArrowLeftRight size={20} />, name: 'Transactions' },
+    { path: '/commissions', icon: <PercentIcon size={20} />, name: 'Commissions' },
     { path: '/reports', icon: <BarChart3 size={20} />, name: 'Reports' },
   ];
 
@@ -72,7 +75,7 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         <div className="p-6 border-b border-sidebar-border">
           <h2 className="text-2xl font-bold flex items-center text-sidebar-foreground">
             <CircleDollarSign className="mr-2" />
-            Gold Manager
+            Gold Vendor
           </h2>
         </div>
 
@@ -100,11 +103,11 @@ const Sidebar = ({ isOpen, toggleSidebar }) => {
         <div className="absolute bottom-0 w-full p-4 border-t border-sidebar-border bg-sidebar-dark">
           <div className="flex items-center px-4 py-2">
             <div className="w-8 h-8 rounded-full bg-sidebar-light flex items-center justify-center text-sidebar-foreground font-bold mr-3">
-              A
+              V
             </div>
             <div>
-              <p className="text-sm font-medium text-white">Admin User</p>
-              <p className="text-xs text-white text-opacity-80">Gold Manager</p>
+              <p className="text-sm font-medium text-white">Vendor Admin</p>
+              <p className="text-xs text-white text-opacity-80">Gold Middleman</p>
             </div>
           </div>
         </div>
