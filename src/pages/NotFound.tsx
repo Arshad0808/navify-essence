@@ -1,5 +1,9 @@
-import { useLocation } from "react-router-dom";
+
+import { useLocation, Link } from "react-router-dom";
 import { useEffect } from "react";
+import Layout from "@/components/Layout";
+import { motion } from "framer-motion";
+import { AlertTriangle } from "lucide-react";
 
 const NotFound = () => {
   const location = useLocation();
@@ -9,18 +13,30 @@ const NotFound = () => {
       "404 Error: User attempted to access non-existent route:",
       location.pathname
     );
+    document.title = "Page Not Found";
   }, [location.pathname]);
 
   return (
-    <div className="min-h-screen flex items-center justify-center bg-gray-100">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">404</h1>
-        <p className="text-xl text-gray-600 mb-4">Oops! Page not found</p>
-        <a href="/" className="text-blue-500 hover:text-blue-700 underline">
-          Return to Home
-        </a>
+    <Layout>
+      <div className="min-h-[80vh] flex flex-col items-center justify-center">
+        <motion.div
+          initial={{ opacity: 0, scale: 0.9 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.3 }}
+          className="text-center"
+        >
+          <AlertTriangle className="mx-auto h-16 w-16 text-red-500 mb-6" />
+          <h1 className="text-4xl font-bold mb-4 text-gray-900">404</h1>
+          <p className="text-xl text-gray-600 mb-8">Oops! Page not found</p>
+          <Link 
+            to="/" 
+            className="bg-blue-600 text-white px-5 py-3 rounded-md hover:bg-blue-700 transition-colors"
+          >
+            Return to Dashboard
+          </Link>
+        </motion.div>
       </div>
-    </div>
+    </Layout>
   );
 };
 
