@@ -82,19 +82,19 @@
 
 @layer components {
   .nav-item {
-    @apply flex items-center px-4 py-3 text-white text-sm font-medium transition-all duration-200 ease-in-out relative gap-3;
+    @apply flex items-center px-4 py-3 text-sidebar-foreground text-sm font-medium transition-all duration-200 ease-in-out relative gap-3;
   }
   
   .nav-item:hover {
-    @apply bg-sidebar-light;
+    @apply bg-sidebar-light text-sidebar-foreground;
   }
   
   .nav-item.active {
-    @apply bg-sidebar-light;
+    @apply bg-sidebar-dark text-white;
   }
   
   .nav-badge {
-    @apply ml-auto bg-white bg-opacity-20 text-xs rounded-full px-2 py-0.5;
+    @apply ml-auto bg-white text-sidebar-dark text-xs rounded-full px-2 py-0.5 font-semibold;
   }
   
   .avatar-circle {

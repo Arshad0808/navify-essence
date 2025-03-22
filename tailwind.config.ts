@@ -54,9 +54,11 @@ export default {
 					foreground: 'hsl(var(--card-foreground))'
 				},
 				sidebar: {
-					DEFAULT: '#5842DF',
-					light: '#6A57E3',
-					foreground: '#FFFFFF',
+					DEFAULT: '#D4AF37', // Golden hem color
+					light: '#E6C158', // Lighter gold for hover states
+					dark: '#B59124', // Darker gold for active states
+					foreground: '#333333', // Dark text for better contrast
+					border: '#F5D76E' // Border color
 				}
 			},
 			borderRadius: {
